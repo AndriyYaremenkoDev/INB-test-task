@@ -15,5 +15,7 @@ use App\Http\Controllers\Api\NumberController;
 |
 */
 
-Route::post('v1/generate', [NumberController::class, 'generate']);
-Route::get('v1/retrieve/{id}', [NumberController::class, 'retrieve']);
+Route::prefix('v1')->group(function () {
+    Route::post('generate', [NumberController::class, 'generate']);
+    Route::get('retrieve/{id}', [NumberController::class, 'retrieve']);
+});
