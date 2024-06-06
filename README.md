@@ -1,4 +1,5 @@
 # INB-test-task
+Laravel v10.48.12 (PHP v8.1.0) 
 
 ## API
 ### generate
