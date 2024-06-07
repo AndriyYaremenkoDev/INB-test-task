@@ -4,22 +4,27 @@ namespace App\Services\Api\Number;
 
 
 use App\Models\Number;
-use Illuminate\Support\Str;
 use App\Contracts\Api\Number\NumberServiceInterface;
 
 class NumberService implements NumberServiceInterface
 {
+    protected $numberModel;
+
+    public function __construct(Number $numberModel)
+    {
+        $this->numberModel = $numberModel;
+    }
+
     public function generate(): Number
     {
-        $number = Number::create([
+        $number = $this->numberModel->create([
             'number' => rand(1, 100),
         ]);
-
         return $number;
     }
 
     public function retrieve(int $id): Number
     {
-        return Number::findOrFail($id);
+        return $this->numberModel->findOrFail($id);
     }
 }

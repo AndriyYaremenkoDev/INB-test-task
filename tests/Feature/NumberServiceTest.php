@@ -13,7 +13,7 @@ class NumberServiceTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->numberService = new NumberService();
+        $this->numberService = new NumberService(new Number());
     }
 
     public function testGenerateAndRetrieve()

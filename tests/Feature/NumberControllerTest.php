@@ -6,7 +6,6 @@ use Tests\TestCase;
 
 class NumberControllerTest extends TestCase
 {
-
     public function testGenerateAndRetrieve()
     {
         $response = $this->postJson('/api/v1/generate');
